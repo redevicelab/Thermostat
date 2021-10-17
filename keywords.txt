@@ -1,0 +1,28 @@
+#######################################
+# Syntax Coloring Map For Thremostat
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Thermostat	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+getResult	KEYWORD2
+setDirection	KEYWORD2
+setLevelOutput	KEYWORD2
+getOutputLevel	KEYWORD2
+
+setPoint	KEYWORD2
+input		KEYWORD2
+hysteresis	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+HEAT	LITERAL1
+COLD	LITERAL1
