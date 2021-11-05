@@ -1,4 +1,4 @@
-#include "thermostat.h"
+#include "Thermostat.h"
 
 //направление регулирования и вывод уровня сигнала
  Thermostat regulator(HEAT,LOW);
