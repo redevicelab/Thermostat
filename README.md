@@ -27,15 +27,23 @@ Arduino library, the classic thermostat
 <a id="init"></a>
 ## Инициализация
 ```cpp
-// 
-Thermostat thermo;                                   
-
+//                                  
+	Thermostat thermo();    				
+	Thermostat thermo(bool dir);				
+	Thermostat thermo(bool dir, bool level);	
+	~Thermostat();
 ```
 
 <a id="usage"></a>
 ## Использование
 ```cpp
-void func();
+  void func();
+
+  					
+	bool getResult();					        // Функция получения результат уровня сигнала для исполняющего устройства(Например: реле)
+	void setDirection(bool dir);		  // Установка направление регулирования
+	void setLevelOutput(bool level);	// Установка уровня сигнала
+	bool getOutputLevel();
 
 ```
 
