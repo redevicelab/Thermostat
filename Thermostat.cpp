@@ -1,5 +1,4 @@
 #include "Thermostat.h"
-#include <Arduino.h>
 
 Thermostat::Thermostat()
 {
@@ -26,6 +25,18 @@ Thermostat::~Thermostat()
 {
 }
 
+void Thermostat::setInputValue(float val){
+	_input = val;
+}
+
+void Thermostat::setPointValue(float val){
+	_point = val;
+}
+
+void Thermostat::setHysteresis(float val){
+	_hysteresis = val;
+}
+
 void Thermostat::setDirection(bool dir) {
 	_direction = dir;
 }
@@ -35,13 +46,15 @@ void Thermostat::setLevelOutput(bool level) {
 }
 
 bool Thermostat::compute() {
-	if (_direction) {//На охлаждение
-		if (input > (setPoint + hysteresis)) _output = true; //on
-		else if (input < setPoint) _output = false; //off
+	if (_direction) 											//COOL
+	{
+		if (_input > (_point + _hysteresis)) _output = true; 	//ON
+		else if (_input < _point) _output = false; 				//OFF
 	}
-	else if (!_direction) {//На нагрев
-		if (input < (setPoint - hysteresis)) _output = true; //on
-		else if (input > setPoint) _output = false; //off
+	else if (!_direction) 										//HEAT
+	{
+		if (_input < (_point - _hysteresis)) _output = true; 	//ON
+		else if (_input > _point) _output = false; 				//OFF
 	}
 	return _output;
 }
@@ -59,6 +72,6 @@ bool Thermostat::getResult() {
 }
 
 bool Thermostat::getOutputLevel(){
-	return  _output;
+	return _output;
 }
 

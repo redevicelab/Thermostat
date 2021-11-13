@@ -36,11 +36,13 @@
 <a id="usage"></a>
 ## Использование
 ```cpp
-
-	bool getResult();					        // Функция получения результат уровня сигнала для исполняющего устройства(Например: реле)
-	void setDirection(bool dir);		  // Установка направление регулирования
+	void setInputValue(float val);		// Принимает значение температуры	 			
+	void setPointValue(float val);		// Установка точки срабатывания  
+	void setHysteresis(float val);		// Установка значения гистерезиса
+	bool getResult();					// Функция получения результат уровня сигнала для исполняющего устройства(Например: реле)
+	void setDirection(bool dir);		// Установка направление регулирования
 	void setLevelOutput(bool level);	// Установка уровня сигнала
-	bool getOutputLevel();
+	bool getOutputLevel();				// Получение текущего уровня
 
 ```
 
